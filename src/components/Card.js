@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import M from 'materialize-css';
 
-class Header extends Component {
+class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      item: props.item
+    };
+  }
+
   render(){
     return (
-      <div className="row">
-        <div className="col s12 m7">
-          <div className="card">
-            <div className="card-image">
-              <img src="images/sample-1.jpg">
-              <span className="card-title">Card Title</span>
-            </div>
-            <div className="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div className="card-action">
-              <a href="#">This is a link</a>
-            </div>
+      <div className="col s4">
+        <div className="card medium">
+          <div className="card-image">
+            <img src={this.state.item.strCategoryThumb}></img>
+            <span className="card-title">{this.state.item.strCategory}</span>
+          </div>
+          <div className="card-content">
+            <p>{this.state.item.strCategoryDescription}</p>
           </div>
         </div>
       </div>
@@ -25,4 +25,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Card;

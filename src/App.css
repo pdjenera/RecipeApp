@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.card-title{
+  color:#303030 !important;
+}
+
+.CardContainer{
+  overflow: wrap;
+}
+
+.card {
+    display: inline-block;
+    width:  100%;
+}
+
+.inline{
+  display: flex;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
