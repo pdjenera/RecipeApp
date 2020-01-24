@@ -14,7 +14,7 @@ class CategoryCard extends Component {
       <div className="col s4">
         <div className="card medium" onClick={(strCategory) => this.state.handler(this.state.item.strCategory)}>
           <div className="card-image">
-            <img src={this.state.item.strCategoryThumb}></img>
+            <img alt="Category" src={this.state.item.strCategoryThumb}></img>
           </div>
           <span className="card-title">{this.state.item.strCategory}</span>
           <div className="card-content">

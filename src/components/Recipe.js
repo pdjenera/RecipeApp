@@ -16,7 +16,7 @@ class Recipe extends Component {
         <div className="col s12">
           <div className="card">
             <div className="card-image recipe centerVert">
-              <img src={this.state.item.strMealThumb}></img>
+              <img alt="Recipe" src={this.state.item.strMealThumb}></img>
             </div>
             <span className="card-title">{this.state.item.strMeal}</span>
             <div className="card-content large">
@@ -28,8 +28,8 @@ class Recipe extends Component {
               <p>{this.state.item.strInstructions}</p>
             </div>
             <div className="card-action">
-              <a href={this.state.item.strYoutube} target="_blank">YouTube Video</a>
-              <a href={this.state.item.strSource} target="_blank">Link to Recipe</a>
+              <a href={this.state.item.strYoutube} target="_blank" rel="noopener noreferrer">YouTube Video</a>
+              <a href={this.state.item.strSource} target="_blank" rel="noopener noreferrer">Link to Recipe</a>
             </div>
           </div>
         </div>
