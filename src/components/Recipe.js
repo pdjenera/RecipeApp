@@ -15,15 +15,15 @@ class Recipe extends Component {
       <div className="row">
         <div className="col s12">
           <div className="card">
-            <div className="card-image recipe">
+            <div className="card-image recipe centerVert">
               <img src={this.state.item.strMealThumb}></img>
             </div>
             <span className="card-title">{this.state.item.strMeal}</span>
-            <div className="card-content">
+            <div className="card-content large">
               <span className="card-title small">Ingredients</span>
               <div><IngredientList ingredients={this.state.item.ingredients}/></div>
             </div>
-            <div className="card-content">
+            <div className="card-content large">
               <span className="card-title small">Instructions</span>
               <p>{this.state.item.strInstructions}</p>
             </div>

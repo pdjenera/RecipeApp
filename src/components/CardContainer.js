@@ -99,7 +99,7 @@ class CardContainer extends Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded || items.length === 0) {
-      return <div>Loading...</div>;
+      return <div></div>;
     } else {
 
       if(this.state.type === 'categories') {

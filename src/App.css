@@ -72,8 +72,19 @@
   margin-right: auto;
 }
 
+.card{
+  display: inline-flex;
+  flex-direction: column;
+}
+
 .card-content{
   overflow: scroll !important;
+  height: 200px;
+}
+
+.card-content.large{
+  overflow: scroll !important;
+  height: 100%;
 }
 
 .card.medium .card-image.recipe{
@@ -98,4 +109,8 @@
 
 .card-content.right{
   float: right;
+}
+
+.card-image.recipe.centerVert img{
+  top:-30%;
 }

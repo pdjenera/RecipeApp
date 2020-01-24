@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Recipe from '../components/Recipe';
+import CategoryCard from '../components/CategoryCard';
+import MealCard from '../components/MealCard';
 import {normalizeRecipe} from '../utils.js';
 
 class Card extends Component {
@@ -15,28 +17,11 @@ class Card extends Component {
   render(){
     if(this.state.category === 'categories'){
       return (
-        <div className="col s4">
-          <div className="card medium" onClick={(strCategory) => this.state.handler(this.state.item.strCategory)}>
-            <div className="card-image">
-              <img src={this.state.item.strCategoryThumb}></img>
-            </div>
-            <span className="card-title">{this.state.item.strCategory}</span>
-            <div className="card-content">
-              <p className="description">{this.state.item.strCategoryDescription}</p>
-            </div>
-          </div>
-        </div>
+        <CategoryCard handler={this.state.handler} item={this.state.item} />
       );
     } else if (this.state.category === 'meals') {
       return (
-        <div className="col s4">
-          <div className="card medium" onClick={(idMeal) => this.state.handler(this.state.item.idMeal)}>
-            <div className="card-image recipe">
-              <img src={this.state.item.strMealThumb}></img>
-            </div>
-            <span className="card-title recipe">{this.state.item.strMeal}</span>
-          </div>
-        </div>
+        <MealCard handler={this.state.handler} item={this.state.item} />
       );
     } else if (this.state.category === 'recipe') {
       let recipe = normalizeRecipe(this.state.item);
