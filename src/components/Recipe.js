@@ -10,6 +10,30 @@ class Recipe extends Component {
     };
   }
 
+  ifVideo(link){
+    if(this.validURL(link)){
+      return <a href={this.state.item.strYoutube} target="_blank" rel="noopener noreferrer">YouTube Video</a>
+    }
+    return null;
+  }
+
+  ifSource(link){
+    if(this.validURL(link)){
+      return <a href={this.state.item.strSource} target="_blank" rel="noopener noreferrer">Link to Recipe</a>
+    }
+    return null;
+  }
+
+  validURL(str) {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+      '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return !!pattern.test(str);
+  }
+
   render(){
     return (
       <div className="row">
@@ -28,8 +52,8 @@ class Recipe extends Component {
               <p>{this.state.item.strInstructions}</p>
             </div>
             <div className="card-action">
-              <a href={this.state.item.strYoutube} target="_blank" rel="noopener noreferrer">YouTube Video</a>
-              <a href={this.state.item.strSource} target="_blank" rel="noopener noreferrer">Link to Recipe</a>
+              {this.ifVideo(this.state.item.strYoutube)}
+              {this.ifSource(this.state.item.strSource)}
             </div>
           </div>
         </div>
